@@ -974,14 +974,18 @@
 <h2 id="cmdopts"><code>cmdopts</code></h2>
 <p>The file <code>cmdopts</code> contains command line options that the user wishes to apply permanently (and conveniently when run from a launcher icon rather than the command line).</p>
 <p>The file contains CLI options exactly as would be issued from the terminal. Options may be on separate lines, and blank lines and line prefixed with a hash '#' are ignored. For example:</p>
+<p>In addtion to options (<code>--</code>), the file may also contain environment variable <code>FOO=BAR</code>.</p>
 <div class="highlight"><pre><span></span><code># Default options for mwp
 --rings 50,20
 #--voice-command &quot;spd-say -t female2 -e&quot;
 #--debug-flags=2
 --dont-maximise
 #-S 8192
+
+# set the anonymous tile file.
+MWP_BLACK_TILE=/home/jrh/.config/mwp/mars.png
 </code></pre></div>
-<p>So here the only current, valid options are  <code>--rings 50,20 -dont-maximise</code></p>
+<p>So here the only current, valid options are  <code>--rings 50,20 -dont-maximise</code>, and the environment variable MWP_BLACK_TILE is set (for <a href="../Black-Ops#custom-tile">anonymous maps</a>).</p>
 <h2 id="layout"><code>.layout</code></h2>
 <p><code>.layout</code> contains the current arrangement of Dock items. You are advised not to manually edit this file (or other named, alternate layout files).</p>
 <h2 id="sourcesjson"><code>sources.json</code></h2>
