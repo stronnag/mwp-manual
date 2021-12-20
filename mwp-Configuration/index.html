@@ -906,8 +906,8 @@
               
                 
 
-<h1 id="mwp-configuration">mwp Configuration</h1>
-<h2 id="overview">Overview</h2>
+<h1 id="mwp-configuration">mwp Configuration<a class="headerlink" href="#mwp-configuration" title="Permanent link">#</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
 <p><a href="https://github.com/stronnag/mwptools">mwp</a> stores configuration in a number of places, to some degree at the developer's whim, but also in accordance with the data item's volatility.</p>
 <ul>
 <li>Command line options</li>
@@ -915,12 +915,12 @@
 <li>dconf / gsettings</li>
 </ul>
 <p>Each type is further discussed below.</p>
-<h2 id="command-line-options">Command line options</h2>
+<h2 id="command-line-options">Command line options<a class="headerlink" href="#command-line-options" title="Permanent link">#</a></h2>
 <p>Command line options provide a 'per instantiation' means to control <a href="https://github.com/stronnag/mwptools">mwp</a> behaviour; the current set of command line options may be viewed by running <a href="https://github.com/stronnag/mwptools">mwp</a> from the command line with the single option <code>--help</code>:</p>
 <div class="highlight"><pre><span></span><code>$ mwp --help
 </code></pre></div>
 <p>Where it is required to give permanence to command line options, they can be added to the configuration file <code>$HOME/.config/cmdopts</code>, which is described in more detail in the following section.</p>
-<h3 id="debug-flags">Debug flags</h3>
+<h3 id="debug-flags">Debug flags<a class="headerlink" href="#debug-flags" title="Permanent link">#</a></h3>
 <p>The <code>--debug-flags</code> option takes a numeric value defines areas where additional debug information may be output.</p>
 <table>
 <thead>
@@ -969,9 +969,9 @@
 </tbody>
 </table>
 <p>Values may be added together (so 511 means all).</p>
-<h2 id="configuration-files">Configuration Files</h2>
+<h2 id="configuration-files">Configuration Files<a class="headerlink" href="#configuration-files" title="Permanent link">#</a></h2>
 <p><a href="https://github.com/stronnag/mwptools">mwp</a> configuration files are stored in a standard directory <code>$HOME/.config/mwp</code>. This directory is created on first invocation if it does not exist. The following files may be found there:</p>
-<h2 id="cmdopts"><code>cmdopts</code></h2>
+<h2 id="cmdopts"><code>cmdopts</code><a class="headerlink" href="#cmdopts" title="Permanent link">#</a></h2>
 <p>The file <code>cmdopts</code> contains command line options that the user wishes to apply permanently (and conveniently when run from a launcher icon rather than the command line).</p>
 <p>The file contains CLI options exactly as would be issued from the terminal. Options may be on separate lines, and blank lines and line prefixed with a hash '#' are ignored. For example:</p>
 <p>In addtion to options (<code>--</code>), the file may also contain environment variable <code>FOO=BAR</code>.</p>
@@ -985,14 +985,14 @@
 # set the anonymous tile file.
 MWP_BLACK_TILE=/home/jrh/.config/mwp/mars.png
 </code></pre></div>
-<p>So here the only current, valid options are  <code>--rings 50,20 -dont-maximise</code>, and the environment variable MWP_BLACK_TILE is set (for <a href="../Black-Ops#custom-tile">anonymous maps</a>).</p>
-<h2 id="layout"><code>.layout</code></h2>
+<p>So here the only current, valid options are  <code>--rings 50,20 -dont-maximise</code>, and the environment variable MWP_BLACK_TILE is set (for <a href="../Black-Ops/#custom-tile">anonymous maps</a>).</p>
+<h2 id="layout"><code>.layout</code><a class="headerlink" href="#layout" title="Permanent link">#</a></h2>
 <p><code>.layout</code> contains the current arrangement of Dock items. You are advised not to manually edit this file (or other named, alternate layout files).</p>
-<h2 id="sourcesjson"><code>sources.json</code></h2>
+<h2 id="sourcesjson"><code>sources.json</code><a class="headerlink" href="#sourcesjson" title="Permanent link">#</a></h2>
 <p><code>sources.json</code> facilitates adding non-standard map sources to <a href="https://github.com/stronnag/mwptools">mwp</a>. See the manual and comments in the source files in the <code>qproxy</code> directory.</p>
-<h2 id="vcolcss"><code>vcol.css</code></h2>
+<h2 id="vcolcss"><code>vcol.css</code><a class="headerlink" href="#vcolcss" title="Permanent link">#</a></h2>
 <p><code>vol.css</code> contains alternate CSS themeing for the battery voltage dock item that may work better on dark desktop themes. An example file is provided as <code>mwp/vcol.css</code> which can be copied into <code>.config/mwp/</code>.</p>
-<h2 id="places"><code>places</code></h2>
+<h2 id="places"><code>places</code><a class="headerlink" href="#places" title="Permanent link">#</a></h2>
 <p>The <code>places</code> (<code>~/.config/mwp/places</code>) file is a delimted (CSV) file that defines a list of "shortcut" home locations used by the "View / Centre on Position ..." menu item. It consists of a Name, Latitude, Longitude and optionally zoom level, separated by a <code>TAB</code>,<code>|</code>,<code>:</code> or <code>;</code>. Note that positions may be localised in the file and thus <code>.</code> is no longer recognised as a field separator.</p>
 <p>Example <code>places</code></p>
 <div class="highlight"><pre><span></span><code># mwp places name,lat,lon [,zoom]
@@ -1000,7 +1000,7 @@ Beaulieu|50.8047104|-1.4942621|17
 Jurby:54.353974:-4.523600:-1
 </code></pre></div>
 <p>The user may maintain these files manually if used, or use the graphic editor.</p>
-<h2 id="dconf-gsettings">Dconf / gsettings</h2>
+<h2 id="dconf-gsettings">Dconf / gsettings<a class="headerlink" href="#dconf-gsettings" title="Permanent link">#</a></h2>
 <p>Linux has a facility for storing configuration items in a registry like facility. This is used extensively by <a href="https://github.com/stronnag/mwptools">mwp</a>. The items can viewed and modified using a number of tools:</p>
 <ul>
 <li><a href="https://github.com/stronnag/mwptools">mwp</a> preference dialogue (for a small subset of the items)</li>
@@ -1015,7 +1015,7 @@ Jurby:54.353974:-4.523600:-1
 ..
 $ gsettings set org.mwptools.planner log-save-path ~/flight-logs/
 </code></pre></div>
-<h3 id="list-of-mwp-settings">List of mwp settings</h3>
+<h3 id="list-of-mwp-settings">List of mwp settings<a class="headerlink" href="#list-of-mwp-settings" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>

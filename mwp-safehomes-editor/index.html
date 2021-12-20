@@ -810,9 +810,9 @@
               
                 
 
-<h1 id="mwp-and-inav-safehome">mwp and inav safehome</h1>
+<h1 id="mwp-and-inav-safehome">mwp and inav safehome<a class="headerlink" href="#mwp-and-inav-safehome" title="Permanent link">#</a></h1>
 <p>One of the great features of <a href="https://github.com/iNavFlight/inav">inav</a> 2.6 was the <code>safehome</code> capability. The user can define of set of up to eight locations, and if any of these is within 200m (configurable up to 650m in <a href="https://github.com/iNavFlight/inav">inav</a> 2.7), then that is used as the home location for RTH (and RTH failsafe).</p>
-<h2 id="inav-setting">inav setting</h2>
+<h2 id="inav-setting">inav setting<a class="headerlink" href="#inav-setting" title="Permanent link">#</a></h2>
 <p><code>safehome</code> is set in <a href="https://github.com/iNavFlight/inav">inav</a> usng the CLI, here's an example:
 <div class="highlight"><pre><span></span><code># safehome
 safehome 0 1 508047750 -14948970
@@ -832,8 +832,8 @@ safehome 7 0 0 0
 <li>Longitude as degrees * 10,000,000 (i.e. 7 decimal places)</li>
 </ul>
 <p>It can be error prone to get locations into the correct format, particularly when a common source (Google Maps) only provides 6 decimal places of precision.</p>
-<h2 id="mwp-solution">mwp solution</h2>
-<h3 id="graphical-user-interface">Graphical User Interface</h3>
+<h2 id="mwp-solution">mwp solution<a class="headerlink" href="#mwp-solution" title="Permanent link">#</a></h2>
+<h3 id="graphical-user-interface">Graphical User Interface<a class="headerlink" href="#graphical-user-interface" title="Permanent link">#</a></h3>
 <p><a href="https://github.com/stronnag/mwptools">mwp</a> now offers a <code>Safe Homes</code> menu option:</p>
 <p><img alt="mwp safehome" src="../images/mwp-safehome-menu.png" /></p>
 <p>This will launch the <code>Safe Home</code> window:</p>
@@ -847,12 +847,12 @@ safehome 7 0 0 0
 <li>Clear (unset) one or all safehomes.</li>
 </ul>
 <p>Note that editing functions are only available when the <code>Safe Homes</code> window is active; if the windows is dismissed with icons displayed, then the icons remain on the map, but are not editable.</p>
-<h3 id="display-safehomes-at-startup">Display safehomes at startup</h3>
+<h3 id="display-safehomes-at-startup">Display safehomes at startup<a class="headerlink" href="#display-safehomes-at-startup" title="Permanent link">#</a></h3>
 <p>It also is possible to set a <code>gsettings</code> key to define a file of safehomes to load at startup, and optinally display (readonly) icons.</p>
 <p><div class="highlight"><pre><span></span><code>gsettings set org.mwptools.planner load-safehome ~/.config/mwp/safehome.txt,Y
 </code></pre></div>
 This sets the default safehomes file to <code>~/.config/mwp/safehome.txt</code> and the appended <code>,Y</code> means display the icons on the map.</p>
-<h3 id="example">Example</h3>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
 <p>The image below shows a blackbox replay. Note that the flight home location (brown icon) is coincident with the pale orange safehome icon.</p>
 <p><img alt="mwp safehomes replay" src="../images/mwp-safehomes-replay.png" /></p>
 

@@ -1316,23 +1316,23 @@
               
                 
 
-<h1 id="dbus-api">DBus API</h1>
-<h2 id="introduction">Introduction</h2>
+<h1 id="dbus-api">DBus API<a class="headerlink" href="#dbus-api" title="Permanent link">#</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
 <p>mwp provides a Dbus API to permit remote control or monitoring of mwp by third party applications.</p>
 <p>Dbus is a common Linux API for inter-process communications, and can be used from most programming languages. <code>mwptools/samples</code> provides examples in <code>python</code>, <code>ruby</code> and <code>bash</code>.</p>
 <p>It is intended that that the <code>ruby</code> examples cover the majority of the  API and provide canonical examples of usage.</p>
 <p>As this is a developer topic, please raise Github issues if clarification is needed or you have a use case that would benefit from extending the API.</p>
 <p>Please also note that the definitive definition of the DBus API is provided by DBus inspection.</p>
-<h2 id="dbus-object-and-interface">DBus object and interface</h2>
+<h2 id="dbus-object-and-interface">DBus object and interface<a class="headerlink" href="#dbus-object-and-interface" title="Permanent link">#</a></h2>
 <p>The mwp Dbus API exists on the session bus when mwp is running.</p>
 <ul>
 <li>Object Path: <code>/org/mwptools/mwp</code></li>
 <li>Interface: <code>"org.mwptools.mwp"</code></li>
 </ul>
-<h2 id="flight-status-and-geo-location-information">Flight Status and geo-location information</h2>
+<h2 id="flight-status-and-geo-location-information">Flight Status and geo-location information<a class="headerlink" href="#flight-status-and-geo-location-information" title="Permanent link">#</a></h2>
 <p>A set of APIs is providedfor synchronous and asynchronous (signals, event by event) notification of vehicle status and location. A use case might be to drive an antenna tracker.</p>
-<h3 id="flight-status-and-geo-location-methods">Flight status and geo-location methods</h3>
-<h4 id="getstatenames">GetStateNames</h4>
+<h3 id="flight-status-and-geo-location-methods">Flight status and geo-location methods<a class="headerlink" href="#flight-status-and-geo-location-methods" title="Permanent link">#</a></h3>
+<h4 id="getstatenames">GetStateNames<a class="headerlink" href="#getstatenames" title="Permanent link">#</a></h4>
 <p>Returns human-readable names for the FC 'state' returned by <code>GetState</code>, as an array of strings. The size of the array is the return value.</p>
 <p><div class="highlight"><pre><span></span><code>int GetStateNames(out string[] states_names)
 </code></pre></div>
@@ -1341,7 +1341,7 @@
   &lt;arg type=&quot;i&quot; name=&quot;result&quot; direction=&quot;out&quot;/&gt;
 &lt;/method&gt;
 </code></pre></div></p>
-<h4 id="getstate">GetState</h4>
+<h4 id="getstate">GetState<a class="headerlink" href="#getstate" title="Permanent link">#</a></h4>
 <p>Returns the FC 'state'. 0 if unarmed. Human-readable state names are provided by <code>GetStateNames()</code>.</p>
 <p><div class="highlight"><pre><span></span><code>int GetState()
 </code></pre></div>
@@ -1349,7 +1349,7 @@
   &lt;arg type=&quot;i&quot; name=&quot;result&quot; direction=&quot;out&quot;/&gt;
 &lt;/method&gt;
 </code></pre></div></p>
-<h4 id="gethome">GetHome</h4>
+<h4 id="gethome">GetHome<a class="headerlink" href="#gethome" title="Permanent link">#</a></h4>
 <p>Returns the home location as latitude (WGS84 decimal degrees),  longitude (WGS84 decimal degrees) and relative altitude (metres, which should always be 0).</p>
 <p><div class="highlight"><pre><span></span><code>void GetHome(out double latitude, out double longitude, out int32 altitude)
 </code></pre></div>
@@ -1359,7 +1359,7 @@
   &lt;arg type=&quot;i&quot; name=&quot;altitude&quot; direction=&quot;out&quot;/&gt;
 &lt;/method&gt;
 </code></pre></div></p>
-<h4 id="getlocation">GetLocation</h4>
+<h4 id="getlocation">GetLocation<a class="headerlink" href="#getlocation" title="Permanent link">#</a></h4>
 <p>Returns the vehicle location as latitude (WGS84 decimal degrees),  longitude (WGS84 decimal degrees) and relative altitude (metres).</p>
 <p><div class="highlight"><pre><span></span><code>void GetLocation(out double latitude, out double longitude, out int32 altitude)
 </code></pre></div>
@@ -1369,7 +1369,7 @@
   &lt;arg type=&quot;i&quot; name=&quot;altitude&quot; direction=&quot;out&quot;/&gt;
 &lt;/method&gt;
 </code></pre></div></p>
-<h4 id="getsats">GetSats</h4>
+<h4 id="getsats">GetSats<a class="headerlink" href="#getsats" title="Permanent link">#</a></h4>
 <p>Returns the number of satellites and the fix type (0=nofix, 1=undefined, 2=2D fix, 3=3D fix).</p>
 <p><div class="highlight"><pre><span></span><code>void GetSats(out uint8 number_satellites, uint8 fix_type)
 </code></pre></div>
@@ -1378,7 +1378,7 @@
   &lt;arg type=&quot;y&quot; name=&quot;fix&quot; direction=&quot;out&quot;/&gt;
 &lt;/method&gt;
 </code></pre></div></p>
-<h4 id="getvelocity">GetVelocity</h4>
+<h4 id="getvelocity">GetVelocity<a class="headerlink" href="#getvelocity" title="Permanent link">#</a></h4>
 <p>Returns the vehicle speed (m/s) and course (degrees), GPS provided.</p>
 <p><div class="highlight"><pre><span></span><code>void GetVelocity(out uint32 speed, out uint32 course)
 </code></pre></div>
@@ -1387,7 +1387,7 @@
   &lt;arg type=&quot;u&quot; name=&quot;course&quot; direction=&quot;out&quot;/&gt;
 &lt;/method&gt;
 </code></pre></div></p>
-<h4 id="getpolarcoordinates">GetPolarCoordinates</h4>
+<h4 id="getpolarcoordinates">GetPolarCoordinates<a class="headerlink" href="#getpolarcoordinates" title="Permanent link">#</a></h4>
 <p>Returns the vehicle location as polar coordinates relative the home position: Range (m), Bearing (degrees) <strong>from home to vehicle</strong>, azimuth (elevation angle, degrees).</p>
 <p><div class="highlight"><pre><span></span><code>void GetPolarCoordinates(out uint32 range, out uint32 direction, out uint32 azimuth)
 </code></pre></div>
@@ -1397,7 +1397,7 @@
   &lt;arg type=&quot;u&quot; name=&quot;azimuth&quot; direction=&quot;out&quot;/&gt;
 &lt;/method&gt;
 </code></pre></div></p>
-<h4 id="getwaypointnumber">GetWaypointNumber</h4>
+<h4 id="getwaypointnumber">GetWaypointNumber<a class="headerlink" href="#getwaypointnumber" title="Permanent link">#</a></h4>
 <p>Returns the next WP number (en-route to) or -1 if not flying WPs.</p>
 <p><div class="highlight"><pre><span></span><code>int GetWaypointNumber()
 </code></pre></div>
@@ -1405,10 +1405,10 @@
   &lt;arg type=&quot;i&quot; name=&quot;result&quot; direction=&quot;out&quot;/&gt;
 &lt;/method&gt;
 </code></pre></div></p>
-<h3 id="flight-status-and-geo-location-signals">Flight status and geo-location signals</h3>
+<h3 id="flight-status-and-geo-location-signals">Flight status and geo-location signals<a class="headerlink" href="#flight-status-and-geo-location-signals" title="Permanent link">#</a></h3>
 <p>A number of signals (asynchronous event by event notifications) are issues for changes in state and location. This avoids applications having to poll for changes. In general, the data returned is that for the eponymous Get* methods.</p>
 <p>All location signals may be rate limited by the <code>DbusPosInterval</code> property in order to avoid excessive DBus traffic.</p>
-<h4 id="homechanged">HomeChanged</h4>
+<h4 id="homechanged">HomeChanged<a class="headerlink" href="#homechanged" title="Permanent link">#</a></h4>
 <p>Notifies that the home position has changed.</p>
 <p><div class="highlight"><pre><span></span><code>signal void HomeChanged (double latitude, double longitude, int altitude)
 </code></pre></div>
@@ -1418,7 +1418,7 @@
   &lt;arg type=&quot;i&quot; name=&quot;altitude&quot;/&gt;
 &lt;/signal&gt;
 </code></pre></div></p>
-<h4 id="locationchanged">LocationChanged</h4>
+<h4 id="locationchanged">LocationChanged<a class="headerlink" href="#locationchanged" title="Permanent link">#</a></h4>
 <p>Notifies that the vehicle position has changed (geographic coordinates).</p>
 <p><div class="highlight"><pre><span></span><code>signal void location_changed (double latitude, double longitude, int altitude)
 </code></pre></div>
@@ -1428,7 +1428,7 @@
   &lt;arg type=&quot;i&quot; name=&quot;altitude&quot;/&gt;
 &lt;/signal&gt;
 </code></pre></div></p>
-<h4 id="polarchanged">PolarChanged</h4>
+<h4 id="polarchanged">PolarChanged<a class="headerlink" href="#polarchanged" title="Permanent link">#</a></h4>
 <p>Notifies that the vehicle position has changed relative to home (polar coordinates).</p>
 <p><div class="highlight"><pre><span></span><code>signal void polar_changed(uint32 range, uint32 direction, uint32 azimuth)
 </code></pre></div>
@@ -1438,7 +1438,7 @@
   &lt;arg type=&quot;u&quot; name=&quot;azimuth&quot;/&gt;
 &lt;/signal&gt;
 </code></pre></div></p>
-<h4 id="velocitychanged">VelocityChanged</h4>
+<h4 id="velocitychanged">VelocityChanged<a class="headerlink" href="#velocitychanged" title="Permanent link">#</a></h4>
 <p>Notifies that the vehicle velocity (course or speed) has changed.</p>
 <p><div class="highlight"><pre><span></span><code>signal void velocity_changed(uint32 speed, uint32 course)
 </code></pre></div>
@@ -1447,7 +1447,7 @@
   &lt;arg type=&quot;u&quot; name=&quot;course&quot;/&gt;
 &lt;/signal&gt;
 </code></pre></div></p>
-<h4 id="statechanged">StateChanged</h4>
+<h4 id="statechanged">StateChanged<a class="headerlink" href="#statechanged" title="Permanent link">#</a></h4>
 <p>Notifies that the vehicle 'state' has changed.</p>
 <p><div class="highlight"><pre><span></span><code>signal void StateChanged(int32 state)
 </code></pre></div>
@@ -1455,7 +1455,7 @@
   &lt;arg type=&quot;i&quot; name=&quot;state&quot;/&gt;
 &lt;/signal&gt;
 </code></pre></div></p>
-<h4 id="satschanged">SatsChanged</h4>
+<h4 id="satschanged">SatsChanged<a class="headerlink" href="#satschanged" title="Permanent link">#</a></h4>
 <p>Notifies that the satellite status has changed.</p>
 <p><div class="highlight"><pre><span></span><code>signal void SatsChanged(uint8 nsats, uint8 fix)
 </code></pre></div>
@@ -1464,7 +1464,7 @@
   &lt;arg type=&quot;y&quot; name=&quot;fix&quot;/&gt;
 &lt;/signal&gt;
 </code></pre></div></p>
-<h4 id="waypointchanged">WaypointChanged</h4>
+<h4 id="waypointchanged">WaypointChanged<a class="headerlink" href="#waypointchanged" title="Permanent link">#</a></h4>
 <p>Notifies that the current WP number has changed.</p>
 <p><div class="highlight"><pre><span></span><code>signal void WaypointChanged(int32 wp)
 </code></pre></div>
@@ -1472,16 +1472,16 @@
   &lt;arg type=&quot;i&quot; name=&quot;wp&quot;/&gt;
 &lt;/signal&gt;
 </code></pre></div></p>
-<h3 id="application-status">Application Status</h3>
-<h4 id="quit">Quit</h4>
+<h3 id="application-status">Application Status<a class="headerlink" href="#application-status" title="Permanent link">#</a></h3>
+<h4 id="quit">Quit<a class="headerlink" href="#quit" title="Permanent link">#</a></h4>
 <p>The <code>Quit</code> signal is issued when mwp exits, allowing a dependent application to close down gracefully or take action to wait for the bus to reappear.</p>
 <p><div class="highlight"><pre><span></span><code>Quit()
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>&lt;signal name=&quot;Quit&quot;&gt;
 &lt;/signal&gt;
 </code></pre></div></p>
-<h2 id="properties">Properties</h2>
-<h3 id="dbusposinterval">DbusPosInterval</h3>
+<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">#</a></h2>
+<h3 id="dbusposinterval">DbusPosInterval<a class="headerlink" href="#dbusposinterval" title="Permanent link">#</a></h3>
 <p><div class="highlight"><pre><span></span><code>uint dbus_pos_interval
 </code></pre></div>
 Defines rate limiting for all position related signals. The value represents the minimum update interval in 0.1s intervals.</p>
@@ -1490,10 +1490,10 @@ Defines rate limiting for all position related signals. The value represents the
 <li>2 is the default, and matches the best LTM rate of 5Hz</li>
 <li>a large value (e.g. 999999, greater than a realistic flight time), would effectively disable event by event positional updates.</li>
 </ul>
-<h2 id="serial-port-and-mission-management">Serial Port and Mission management</h2>
+<h2 id="serial-port-and-mission-management">Serial Port and Mission management<a class="headerlink" href="#serial-port-and-mission-management" title="Permanent link">#</a></h2>
 <p>A set of APIs is provided for remote serial port and mission management.</p>
-<h2 id="serial-ports">Serial Ports</h2>
-<h3 id="getdevices">GetDevices</h3>
+<h2 id="serial-ports">Serial Ports<a class="headerlink" href="#serial-ports" title="Permanent link">#</a></h2>
+<h3 id="getdevices">GetDevices<a class="headerlink" href="#getdevices" title="Permanent link">#</a></h3>
 <p>The <code>GetDevices</code> API returns a list of the serial devices known to the mwp instance, as an array of strings.</p>
 <p><div class="highlight"><pre><span></span><code>void GetDevices(out string[]device_names)
 </code></pre></div>
@@ -1501,7 +1501,7 @@ Defines rate limiting for all position related signals. The value represents the
   &lt;arg type=&quot;as&quot; name=&quot;devices&quot; direction=&quot;out&quot;/&gt;
 &lt;/method&gt;
 </code></pre></div></p>
-<h3 id="connectionstatus">ConnectionStatus</h3>
+<h3 id="connectionstatus">ConnectionStatus<a class="headerlink" href="#connectionstatus" title="Permanent link">#</a></h3>
 <p>The <code>ConnectionStatus</code> API returns a boolean status as to whether <code>mwp</code> is connected to a serial device, and if connected, the name of the device.</p>
 <p><div class="highlight"><pre><span></span><code>bool ConnectionsStatus(out string device_name)
 </code></pre></div>
@@ -1510,7 +1510,7 @@ Defines rate limiting for all position related signals. The value represents the
   &lt;arg type=&quot;b&quot; name=&quot;result&quot; direction=&quot;out&quot;/&gt;
 &lt;/method&gt;
 </code></pre></div></p>
-<h3 id="connectdevice">ConnectDevice</h3>
+<h3 id="connectdevice">ConnectDevice<a class="headerlink" href="#connectdevice" title="Permanent link">#</a></h3>
 <p>The <code>ConnectDevice</code> API attempts connection to the given device, and returns the status of the operation (<code>true</code> =&gt; connected).</p>
 <p><div class="highlight"><pre><span></span><code>bool ConnectDevice(string device_name)
 </code></pre></div>
@@ -1519,16 +1519,16 @@ Defines rate limiting for all position related signals. The value represents the
   &lt;arg type=&quot;b&quot; name=&quot;result&quot; direction=&quot;out&quot;/&gt;
 &lt;/method&gt;
 </code></pre></div></p>
-<h2 id="mission-management">Mission Management</h2>
+<h2 id="mission-management">Mission Management<a class="headerlink" href="#mission-management" title="Permanent link">#</a></h2>
 <p>Somewhat inconsistent set of mission management APIs. Note these are not yet multi-mission aware.</p>
-<h3 id="clearmission">ClearMission</h3>
+<h3 id="clearmission">ClearMission<a class="headerlink" href="#clearmission" title="Permanent link">#</a></h3>
 <p>Clears the current mission from mwp.</p>
 <p><div class="highlight"><pre><span></span><code>void ClearMission()
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>&lt;method name=&quot;ClearMission&quot;&gt;
 &lt;/method&gt;
 </code></pre></div></p>
-<h3 id="setmission">SetMission</h3>
+<h3 id="setmission">SetMission<a class="headerlink" href="#setmission" title="Permanent link">#</a></h3>
 <p>Opens a mission in mwp from an XML or JSON document, returns the number of mission points.</p>
 <p><div class="highlight"><pre><span></span><code>int SetMission(string mission)
 </code></pre></div>
@@ -1537,7 +1537,7 @@ Defines rate limiting for all position related signals. The value represents the
   &lt;arg type=&quot;u&quot; name=&quot;result&quot; direction=&quot;out&quot;/&gt;
  &lt;/method&gt;
 </code></pre></div></p>
-<h3 id="loadmission">LoadMission</h3>
+<h3 id="loadmission">LoadMission<a class="headerlink" href="#loadmission" title="Permanent link">#</a></h3>
 <p>Opens a mission in mwp from an mission file, returns the number of mission points.</p>
 <p><div class="highlight"><pre><span></span><code>int LoadMission(string filename)
 </code></pre></div>
@@ -1546,7 +1546,7 @@ Defines rate limiting for all position related signals. The value represents the
   &lt;arg type=&quot;u&quot; name=&quot;result&quot; direction=&quot;out&quot;/&gt;
 &lt;/method&gt;
 </code></pre></div></p>
-<h3 id="uploadmission">UploadMission</h3>
+<h3 id="uploadmission">UploadMission<a class="headerlink" href="#uploadmission" title="Permanent link">#</a></h3>
 <p>Loads the current mwp mission into the flight controller, optionally saving to it EEPROM. Returns the number of mission points.</p>
 <p><div class="highlight"><pre><span></span><code>int UploadMission(bool to_eeprom)
 </code></pre></div>
@@ -1555,7 +1555,7 @@ Defines rate limiting for all position related signals. The value represents the
   &lt;arg type=&quot;i&quot; name=&quot;result&quot; direction=&quot;out&quot;/&gt;
 &lt;/method&gt;
 </code></pre></div></p>
-<h2 id="examples">Examples</h2>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
 <ul>
 <li><code>samples/mwp-dbus-test.sh</code></li>
 <li><code>samples/mwp-dbus.rb</code></li>
@@ -1564,7 +1564,7 @@ Defines rate limiting for all position related signals. The value represents the
 <li><code>samples/mwp-dbus-loc.py</code></li>
 <li><code>samples/mwp-dbus-to-gpx.rb</code></li>
 </ul>
-<h2 id="introspection">Introspection</h2>
+<h2 id="introspection">Introspection<a class="headerlink" href="#introspection" title="Permanent link">#</a></h2>
 <p>Not withstanding the state of the documentation, it is possible introspect the API. Note that mwp must be running for the API to exist.
 The document returned by DBus introspection <strong>is</strong> the definitive definition of the API.</p>
 <div class="highlight"><pre><span></span><code># Note samples/mwp-dbus-loc.rb also provides introspection.

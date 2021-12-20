@@ -1080,35 +1080,35 @@
               
                 
 
-<h1 id="windows-11-wsl-g">Windows 11 / WSL-G</h1>
-<h2 id="intro">Intro</h2>
+<h1 id="windows-11-wsl-g">Windows 11 / WSL-G<a class="headerlink" href="#windows-11-wsl-g" title="Permanent link">#</a></h1>
+<h2 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">#</a></h2>
 <p>As a result of user interest in running mwp on Windows 11 / WSL-G, here's an experiment to see if it's possible. By a Windows neophyte, so if I can install mwp on WSL, anyone can.</p>
 <p>There is also an excellent <a href="https://www.youtube.com/watch?v=VvnBzQR7aE8">you-tube video tutorial</a> from Marc Hoffmann (in English and German).</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VvnBzQR7aE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<h2 id="environment">Environment</h2>
+<h2 id="environment">Environment<a class="headerlink" href="#environment" title="Permanent link">#</a></h2>
 <p>Tested with Windows 11 VM hosted on Arch Linux by the developer.</p>
-<h2 id="wsl-installation">WSL Installation</h2>
+<h2 id="wsl-installation">WSL Installation<a class="headerlink" href="#wsl-installation" title="Permanent link">#</a></h2>
 <ul>
 <li>Installed default Ubuntu</li>
 <li>Note that serial ports <strong>still</strong> don't appear to work in WSL (workaround described below)</li>
 </ul>
-<h3 id="windows-wsl-pre-requisites">Windows / WSL Pre-requisites</h3>
+<h3 id="windows-wsl-pre-requisites">Windows / WSL Pre-requisites<a class="headerlink" href="#windows-wsl-pre-requisites" title="Permanent link">#</a></h3>
 <p>None other than the serial port issue, Wayland (GUI) and sound just work.
 The serial port problem can be mitigated by a "serial to IP" solution; mwptools provides <a href="#serial-devices"><code>ser2udp</code></a> for this purpose.</p>
-<h2 id="mwp-installation">mwp Installation</h2>
+<h2 id="mwp-installation">mwp Installation<a class="headerlink" href="#mwp-installation" title="Permanent link">#</a></h2>
 <p>Use one of the following:</p>
-<h3 id="a-install-the-current-release-from-github">(a) Install the <a href="https://github.com/stronnag/mwptools/releases/latest">current release from github</a>.</h3>
+<h3 id="a-install-the-current-release-from-github">(a) Install the <a href="https://github.com/stronnag/mwptools/releases/latest">current release from github</a>.<a class="headerlink" href="#a-install-the-current-release-from-github" title="Permanent link">#</a></h3>
 <ul>
 <li>Down load the <code>.deb</code> file</li>
 <li><code>cd</code> to where ever you saved the <code>.deb</code> file</li>
 <li>In the wsl terminal
   <code>sudo apt install mwptools_0.0.0-1_amd64.deb</code></li>
 </ul>
-<h4 id="b-unified-first-time-build-script-build-and-install-from-source">(b) Unified first-time build script (build and install from source)</h4>
+<h4 id="b-unified-first-time-build-script-build-and-install-from-source">(b) Unified first-time build script (build and install from source)<a class="headerlink" href="#b-unified-first-time-build-script-build-and-install-from-source" title="Permanent link">#</a></h4>
 <p>For the inital install, there is a unified / simplified install / build / install script: <a href="https://github.com/stronnag/mwptools/wiki/Building-with-meson-and-ninja/#easy-first-time-install-on-debian-and-ubuntu">Instructions</a></p>
 <p>This install mwptools and blackbox-tools-inav to <code>$HOME/.local/bin</code>.</p>
-<h4 id="c-tradition-build-process-build-and-install-from-source">(c) Tradition build process (build and install from source)</h4>
+<h4 id="c-tradition-build-process-build-and-install-from-source">(c) Tradition build process (build and install from source)<a class="headerlink" href="#c-tradition-build-process-build-and-install-from-source" title="Permanent link">#</a></h4>
 <p>If you want more control over build options.</p>
 <p>If <code>git</code> is not pre-installed in WSL, then it will be necessary to install it.</p>
 <div class="highlight"><pre><span></span><code>sudo apt update &amp;&amp; sudo apt upgrade
@@ -1123,9 +1123,9 @@ sudo /tmp/u.sh Y # &quot;Y&quot; bypasses interactive query / responses
 </code></pre></div>
 <p>Then build and install mwp and optionally the blackbox tools (as <code>mwptools/docs/debian-ubuntu-dependencies.txt</code>). <a href="https://github.com/stronnag/mwptools/wiki/Building-with-meson-and-ninja">Build documentation</a>.</p>
 <p>For the optimal blackbox replay, install the <a href="https://github.com/stronnag/bbl2kml">flightlog2x</a> tools, either from the Github release or build from source in Linux/WSL.</p>
-<h2 id="running-mwp">Running mwp</h2>
+<h2 id="running-mwp">Running mwp<a class="headerlink" href="#running-mwp" title="Permanent link">#</a></h2>
 <p>There is no longer any need to mess around the <code>DISPLAY</code> or <code>udev</code> settings. No 3rd party X-server, Windows handles all the GUI.</p>
-<h3 id="one-off-changes">One off changes</h3>
+<h3 id="one-off-changes">One off changes<a class="headerlink" href="#one-off-changes" title="Permanent link">#</a></h3>
 <ul>
 <li>
 <p>WSL installs a very cut down icon theme that does not provide the all the system / standard icons used by mwp. Fix this by:
@@ -1154,10 +1154,10 @@ generateHosts = false
 <p>Then you are ready to run mwp.</p>
 <div class="highlight"><pre><span></span><code>mwp
 </code></pre></div>
-<h3 id="serial-devices">Serial devices</h3>
+<h3 id="serial-devices">Serial devices<a class="headerlink" href="#serial-devices" title="Permanent link">#</a></h3>
 <p>In order to use a serial device, it is necessary to run a "serial to IP" bridge on the Windows side. This application will need to be white-listed in the Windows firewall.</p>
 <p>There are a number of existing solutions that may work; <strong>mwp</strong> provides a simple, dedicated <code>ser2udp</code> tool that works well.</p>
-<h3 id="building-mwps-ser2udp">Building mwp's <code>ser2udp</code></h3>
+<h3 id="building-mwps-ser2udp">Building mwp's <code>ser2udp</code><a class="headerlink" href="#building-mwps-ser2udp" title="Permanent link">#</a></h3>
 <p>On the <strong>Linux/WSL side</strong>:</p>
 <ul>
 <li><code>cd mwptools/src/samples/s2n</code></li>
@@ -1183,7 +1183,7 @@ External address: 172.29.32.1
 <li><code>ser2udp</code> will <em>only</em> attempt to acquire STM32 USB devices (<code>0483:5740</code> vid:pid)</li>
 <li>You need to terminate <code>ser2udp</code> when you're done with it (e.g. to use the inav configurator in Windows).</li>
 </ul>
-<h4 id="using-ser2udp-in-mwp">Using <code>ser2udp</code> in mwp</h4>
+<h4 id="using-ser2udp-in-mwp">Using <code>ser2udp</code> in mwp<a class="headerlink" href="#using-ser2udp-in-mwp" title="Permanent link">#</a></h4>
 <ul>
 <li>We need to know the IP address (or have a hostname for) the Windows WSL endpoint. Fortunately this happens to be Linux's default gateway, so we can handle it fairly transparently.</li>
 </ul>
@@ -1203,7 +1203,7 @@ cliterm udp://__MWP_SERIAL_HOST:17071
 <li>For WSL and <code>ser2udp</code>, in mwp preferences, set the serial device to <code>udp://__MWP_SERIAL_HOST:17071</code></li>
 <li>Or in the shell, for some other scenario, <code>export MWP_SERIAL_HOST=foobox.org</code> in the event that you have a valid use case</li>
 </ul>
-<h3 id="launch-ser2udp-and-mwp-in-one-go">Launch ser2udp and MWP in one go</h3>
+<h3 id="launch-ser2udp-and-mwp-in-one-go">Launch ser2udp and MWP in one go<a class="headerlink" href="#launch-ser2udp-and-mwp-in-one-go" title="Permanent link">#</a></h3>
 <ul>
 <li>Create a new <code>txt</code> file in the same folder where <code>ser2udp.exe</code> is located and copy the following lines into that file:
 <div class="highlight"><pre><span></span><code>@echo off
@@ -1219,12 +1219,12 @@ exit
 <li>Create a shortcut anywhere on your PC or in <code>C:\Users\&lt;username&gt;\AppData\Roaming\Microsoft\Windows\Start Menu\Programs</code> to pin it to your Start Menu</li>
 <li>Replace the shortcut symbol with the MWP icon <a href="https://github.com/stronnag/mwptools/wiki/images/mwp_icon.ico">from here</a></li>
 </ul>
-<h3 id="batch-file-considerations">BATch file considerations</h3>
+<h3 id="batch-file-considerations">BATch file considerations<a class="headerlink" href="#batch-file-considerations" title="Permanent link">#</a></h3>
 <ul>
 <li>The <code>timeout</code> value may need changing (or not be needed at all). YMMV.</li>
 <li>Consider adding the <code>/min</code> to <code>cmd</code> to minimise the <code>ser2udp</code> window on startup.</li>
 </ul>
-<h2 id="other-packages-for-additional-functionality">Other packages for additional functionality.</h2>
+<h2 id="other-packages-for-additional-functionality">Other packages for additional functionality.<a class="headerlink" href="#other-packages-for-additional-functionality" title="Permanent link">#</a></h2>
 <ul>
 <li>To replay blackbox logs, you need</li>
 <li><a href="https://github.com/iNavFlight/blackbox-tools">inav blackbox tools</a>, mandatory</li>
@@ -1232,16 +1232,16 @@ exit
 <li>Terrain Analysis</li>
 <li>Gnuplot. Check the installer script that it's enabled.</li>
 </ul>
-<h2 id="summary">Summary</h2>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
 <ul>
 <li>Much, much better than the prior WSL instances, pity about the lack of support for serial ports (still). Overall, the seamless WSL-g experience is impressive.</li>
 </ul>
-<h3 id="connection-via-ser2udp-bridge">Connection via <code>ser2udp</code> bridge</h3>
+<h3 id="connection-via-ser2udp-bridge">Connection via <code>ser2udp</code> bridge<a class="headerlink" href="#connection-via-ser2udp-bridge" title="Permanent link">#</a></h3>
 <p><img alt="Connected" src="../images/win11-a.png" />
 Dark theme, <a href="#one-off-changes">correct system icons installed</a>, connected to FC via <code>ser2udp</code>.</p>
-<h3 id="terrain-elevation-analysis">Terrain / elevation analysis</h3>
+<h3 id="terrain-elevation-analysis">Terrain / elevation analysis<a class="headerlink" href="#terrain-elevation-analysis" title="Permanent link">#</a></h3>
 <p><img alt="Terrain" src="../images/win11-b.png" /></p>
-<h3 id="blackbox-replay">Blackbox replay</h3>
+<h3 id="blackbox-replay">Blackbox replay<a class="headerlink" href="#blackbox-replay" title="Permanent link">#</a></h3>
 <p><img alt="BBL" src="../images/win11-c.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Good enough!</p>

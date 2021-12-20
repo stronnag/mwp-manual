@@ -824,8 +824,8 @@
               
                 
 
-<h1 id="flite-text-to-speech">Flite Text to Speech</h1>
-<h2 id="overview">Overview</h2>
+<h1 id="flite-text-to-speech">Flite Text to Speech<a class="headerlink" href="#flite-text-to-speech" title="Permanent link">#</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
 <p><a href="https://github.com/stronnag/mwptools">mwp</a> can use the <code>flite</code> text to speech engine (as well as <strong>espeak</strong> or <strong>speech-dispatcher</strong>. Flite is enabled if:</p>
 <ul>
 <li>You have the flite development files installed</li>
@@ -836,7 +836,7 @@
 </ul>
 <p>Unfortunately, it is non-trivial to detect the flite version at build time.</p>
 <p>Flite provides reasonable quality voices with low overhead, including some female voices.</p>
-<h2 id="configuration">Configuration</h2>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
 <p>Flite is configured using two <code>gsettings</code> keys:</p>
 <table>
 <thead>
@@ -859,8 +859,8 @@
 <div class="highlight"><pre><span></span><code>$ gsettings set org.mwptools.planner speech-api flite
 $ gsettings set org.mwptools.planner flite-voice-file /home/jrh/.config/mwp/cmu_us_clb.flitevox,0.9
 </code></pre></div>
-<h2 id="discussion">Discussion</h2>
-<h3 id="voice-files">Voice Files</h3>
+<h2 id="discussion">Discussion<a class="headerlink" href="#discussion" title="Permanent link">#</a></h2>
+<h3 id="voice-files">Voice Files<a class="headerlink" href="#voice-files" title="Permanent link">#</a></h3>
 <p>flite can use external voice files that provide better quality than the built-in voices. Your distro may provide these voice files in an optional package, or you can download from http://www.festvox.org, eg. for flite 2.1 http://www.festvox.org/flite/packed/flite-2.1/voices/ (replace 2.1 with 2.0 etc., not all the 2.1 voices may exist for 2.0). The following script will bulk download the non-Indic voices; you can test them out with the <code>flite</code> application, or mwp's <code>ftest</code> <a href="#test">application</a>).</p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash
 
@@ -876,9 +876,9 @@ do
   wget -P . $BASE/$V
 done
 </code></pre></div>
-<h3 id="replay-speed">Replay Speed</h3>
+<h3 id="replay-speed">Replay Speed<a class="headerlink" href="#replay-speed" title="Permanent link">#</a></h3>
 <p>The default replay speed for some flite voices is rather slow. The optional rate setting in the gsettings <code>flite-voice-file</code> key may be used to increase the rate.</p>
-<h2 id="test">Test</h2>
+<h2 id="test">Test<a class="headerlink" href="#test" title="Permanent link">#</a></h2>
 <p><code>mwptools/samples/flite</code> provides a test programme for assessing flite voices.</p>
 <div class="highlight"><pre><span></span><code>$ cd  mwptools/samples/flite
 $ make

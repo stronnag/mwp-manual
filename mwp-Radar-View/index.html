@@ -974,7 +974,7 @@
               
                 
 
-<h1 id="radar-view">Radar View</h1>
+<h1 id="radar-view">Radar View<a class="headerlink" href="#radar-view" title="Permanent link">#</a></h1>
 <p><a href="https://github.com/stronnag/mwptools">mwp</a> supports the display of "radar" contacts. This provides a view of adjacent aircraft obtained from a number of sources:</p>
 <ul>
 <li>
@@ -987,7 +987,7 @@
 <p>Proximity alerts (visual and audible) for manned (ADS-B) aircraft, based on planned or actual home location.</p>
 </li>
 </ul>
-<h2 id="mwp-configuration">mwp Configuration</h2>
+<h2 id="mwp-configuration">mwp Configuration<a class="headerlink" href="#mwp-configuration" title="Permanent link">#</a></h2>
 <p><a href="https://github.com/stronnag/mwptools">mwp</a> can receive the 'radar' data over one or two connections, either or both may be active, and <a href="https://github.com/stronnag/mwptools">mwp</a> can receive and display 'own vehicle' telemetry (MSP, LTM or Smartpost), 'inav-radar' and 'MAVlink Traffic' data simultaneously. Radar data may be received over:</p>
 <ul>
 <li>The main serial port device (see <a href="#using-the-main-serial-port">caveat</a> for inav-radar) or</li>
@@ -1018,13 +1018,13 @@ Multiple devices may be defined, e.g.</p>
 <li>As a comma separated list: <code>--radar-device=/dev/pingRX@57600,/dev/inavradar@115200</code></li>
 </ul>
 <p>Any bespoke <code>radar-device</code> is started automatically on startup (or when it shows up). It is not managed via the serial <code>Connect</code> button.</p>
-<h2 id="using-the-main-serial-port">Using the main serial port</h2>
+<h2 id="using-the-main-serial-port">Using the main serial port<a class="headerlink" href="#using-the-main-serial-port" title="Permanent link">#</a></h2>
 <p>The main serial port may be used for MavLink Traffic without any further configuration. For inav-radar, to use the main msp port for inav-radar (vice using <code>--radar-device</code>), it is still necessary to add a command option to <a href="https://github.com/stronnag/mwptools">mwp</a>; it needs to told to relax the default inbound MSP direction check.</p>
 <p>This is enabled as
 <div class="highlight"><pre><span></span><code>mwp --relaxed-msp
 </code></pre></div>
 which should be 'mainly harmless' for normal operations. It's entirely acceptable to put this in <code>~/config/mwp/cmdopts</code> to make it the default, as the protocol check dilution is slight.</p>
-<h2 id="settings">Settings</h2>
+<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">#</a></h2>
 <p>The following <code>dconf</code> setting affect the radar function:</p>
 <table>
 <thead>
@@ -1049,7 +1049,7 @@ which should be 'mainly harmless' for normal operations. It's entirely acceptabl
 </tbody>
 </table>
 <p>Note that proximity alerts require that both the <code>radar-alert-altitude</code> and <code>radar-alert-range</code> values are set, and that there is a planned or actual home location.</p>
-<h2 id="usage">Usage</h2>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
 <p>Once the radar interface is open, radar tracks are displayed on the map and in a list available from the "View -&gt; Radar View' menu option.</p>
 <ul>
 <li>The list view is sort-able on the <code>Id</code>, <code>Status</code>, <code>Last</code> (time) and <code>Range</code> columns.</li>
@@ -1057,7 +1057,7 @@ which should be 'mainly harmless' for normal operations. It's entirely acceptabl
 <li>List and map views are updated in (near) real time.</li>
 <li>Preference for display units are used for positions, altitude and speed.</li>
 </ul>
-<h3 id="name">Name</h3>
+<h3 id="name">Name<a class="headerlink" href="#name" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -1076,7 +1076,7 @@ which should be 'mainly harmless' for normal operations. It's entirely acceptabl
 </tr>
 </tbody>
 </table>
-<h3 id="status">Status</h3>
+<h3 id="status">Status<a class="headerlink" href="#status" title="Permanent link">#</a></h3>
 <p>Radar contacts have one of the following status values:</p>
 <table>
 <thead>
@@ -1128,7 +1128,7 @@ which should be 'mainly harmless' for normal operations. It's entirely acceptabl
 </tr>
 </tbody>
 </table>
-<h2 id="examples">Examples</h2>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
 <ul>
 <li>Proximity Alerts</li>
 <li>Live and stale aircraft</li>
@@ -1136,15 +1136,15 @@ which should be 'mainly harmless' for normal operations. It's entirely acceptabl
 <li>Mission Plan</li>
 <li>List view</li>
 </ul>
-<h3 id="live-ads-b-and-simulated-inav-targets-with-proximity-alerts-range-3000m">Live ADS-B and simulated inav targets, with proximity alerts (range &lt; 3000m).</h3>
+<h3 id="live-ads-b-and-simulated-inav-targets-with-proximity-alerts-range-3000m">Live ADS-B and simulated inav targets, with proximity alerts (range &lt; 3000m).<a class="headerlink" href="#live-ads-b-and-simulated-inav-targets-with-proximity-alerts-range-3000m" title="Permanent link">#</a></h3>
 <p><img alt="radar-alerts" src="../images/mwp-radar-alert.png" /></p>
-<h3 id="local-manned-aircraft-view-over-florida-may-2020">Local manned aircraft view over Florida (May 2020).</h3>
+<h3 id="local-manned-aircraft-view-over-florida-may-2020">Local manned aircraft view over Florida (May 2020).<a class="headerlink" href="#local-manned-aircraft-view-over-florida-may-2020" title="Permanent link">#</a></h3>
 <p><img alt="Florida-may-2020" src="../images/florida-2020-05.png" /></p>
-<h3 id="simulated-inav-radar-view">Simulated inav radar view</h3>
+<h3 id="simulated-inav-radar-view">Simulated inav radar view<a class="headerlink" href="#simulated-inav-radar-view" title="Permanent link">#</a></h3>
 <p><img alt="inav-radar-sim" src="../images/mwp-inav-radar.png" /></p>
-<h2 id="simulators">Simulators</h2>
+<h2 id="simulators">Simulators<a class="headerlink" href="#simulators" title="Permanent link">#</a></h2>
 <p>There are simulators for both inav-radar and MAVLink 'Traffic Report' (e.g. uAvionix PingRX) in the <code>mwptools/samples/radar</code> directory.</p>
-<h2 id="changing-the-radar-symbols">Changing the Radar Symbols</h2>
+<h2 id="changing-the-radar-symbols">Changing the Radar Symbols<a class="headerlink" href="#changing-the-radar-symbols" title="Permanent link">#</a></h2>
 <p>Any map symbol used by <a href="https://github.com/stronnag/mwptools">mwp</a> can be changed by the user; in the image above, the inav radar node symbol has been changed from the default stylised inav multirotor to a smaller version of the mission replay "paper plane" symbol as follows:</p>
 <ul>
 <li>All the default <a href="https://github.com/stronnag/mwptools">mwp</a> icons / map symbols can be found in <code>$prefix/share/mwp/pixmaps/</code> (e.g. <code>~/.local/share/mwp/pixmaps</code> for a "local" installation).</li>
@@ -1162,10 +1162,10 @@ mv  ~/config/mwp/pixmaps/preview.png  ~/config/mwp/pixmaps/inav-radar.svg
 file ~/.config/mwp/pixmaps/inav-radar.svg
 /home/jrh/.config/mwp/pixmaps/inav-radar.svg: PNG image data, 32 x 32, 8-bit/color RGBA, non-interlaced
 </code></pre></div>
-<h2 id="protocol-documentation">Protocol documentation</h2>
-<h3 id="mavlink-traffic-report-eg-uavionix-pingrx">MAVLink 'Traffic Report' (e.g. uAvionix PingRX)</h3>
+<h2 id="protocol-documentation">Protocol documentation<a class="headerlink" href="#protocol-documentation" title="Permanent link">#</a></h2>
+<h3 id="mavlink-traffic-report-eg-uavionix-pingrx">MAVLink 'Traffic Report' (e.g. uAvionix PingRX)<a class="headerlink" href="#mavlink-traffic-report-eg-uavionix-pingrx" title="Permanent link">#</a></h3>
 <p>The MAVLink implementation is <a href="https://uavionix.com/downloads/integration/uAvionix%20Ping%20Integration%20Guide.pdf">comprehensively documented</a> by the vendor.</p>
-<h3 id="inav-radar">inav radar</h3>
+<h3 id="inav-radar">inav radar<a class="headerlink" href="#inav-radar" title="Permanent link">#</a></h3>
 <p>The following is required by a device wishing to act as a ground node (it either masquerades as an inav FC, or declares itself a GCS)</p>
 <ul>
 <li>Receive and respond to the following MSP data requests:</li>

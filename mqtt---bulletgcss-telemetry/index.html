@@ -756,8 +756,8 @@
               
                 
 
-<h1 id="bulletgcss-telemetry">BulletGCSS Telemetry</h1>
-<h2 id="mwp-requirements">mwp requirements</h2>
+<h1 id="bulletgcss-telemetry">BulletGCSS Telemetry<a class="headerlink" href="#bulletgcss-telemetry" title="Permanent link">#</a></h1>
+<h2 id="mwp-requirements">mwp requirements<a class="headerlink" href="#mwp-requirements" title="Permanent link">#</a></h2>
 <p>mwp works with the web-based Ground Control Station <a href="https://bulletgcss.fpvsampa.com/">BulletGCSS</a> MQTT protocol, tested with both a <code>fl2mqtt</code> simulation and a recorded live session.</p>
 <p>The MQTT component is build if either <code>paho-mqtt</code> or <code>mosquitto</code> libraries are detected; <code>paho-mtqq</code> is preferred.
 <div class="highlight"><pre><span></span><code>## Debian / Ubuntu ##
@@ -793,7 +793,7 @@ make &amp;&amp; sudo make install
 sudo pkg install mosquitto
 </code></pre></div>
 If you have both <code>paho-mqtt</code> and <code>mosquitto</code> installed, then <code>paho-mqtt</code> is preferred.</p>
-<h2 id="usage">Usage</h2>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
 <p>Once mwp is built with a MQTT library, you can use an MQTT URL as a device name, for example for the demo that runs every other hour (00:00, 02:00 .. 22:00) UTC on <code>broker.emqx.io</code> with topic <code>org/mwptools/mqtt/otxplayer</code>, the mqtt URI for mwp would be:
 <div class="highlight"><pre><span></span><code>mqtt://broker.emqx.io/org/mwptools/mqtt/otxplayer
 </code></pre></div>

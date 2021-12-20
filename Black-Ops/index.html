@@ -770,14 +770,14 @@
               
                 
 
-<h1 id="anonymous-maps">Anonymous Maps</h1>
+<h1 id="anonymous-maps">Anonymous Maps<a class="headerlink" href="#anonymous-maps" title="Permanent link">#</a></h1>
 <p><strong>mwp</strong> povides a pseudo-map proxy that just gives you a black map (or user specified tile). This may be useful for a number of use-cases:</p>
 <ul>
 <li>privacy</li>
 <li>general obstinacy</li>
 <li>clarity of display</li>
 </ul>
-<h2 id="building">Building</h2>
+<h2 id="building">Building<a class="headerlink" href="#building" title="Permanent link">#</a></h2>
 <p>This proxy is not build by default, it is necessary to build, install and configure the proxy manually.</p>
 <div class="highlight"><pre><span></span><code>cd mwptools/qproxy
 make bproxy
@@ -788,7 +788,7 @@ sudo cp broxy /usr/local/bin
 # or
 sudo cp broxy /usr/bin
 </code></pre></div>
-<h2 id="configuration">Configuration</h2>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
 <p>That was the easy bit! Now it is necessary to tell <a href="https://github.com/stronnag/mwptools">mwp</a> where to find the proxy. This involves a setting and a configuration file.</p>
 <p>First of all, ensure that the <code>map-sources</code> setting is enabled:</p>
 <div class="highlight"><pre><span></span><code>$ gsettings get org.mwptools.planner map-sources
@@ -830,7 +830,7 @@ So a minimal <code>~/.config/mwp/sources.json</code> looks like:
 </code></pre></div>
 On starting <strong>mwp</strong> you should see a new map option "Black Tiles".</p>
 <p><img alt="Black Map" src="../images/black.png" /></p>
-<h2 id="custom-tile">Custom Tile</h2>
+<h2 id="custom-tile">Custom Tile<a class="headerlink" href="#custom-tile" title="Permanent link">#</a></h2>
 <p>It's also possible to have a custom tile (which does not have to be black). The tile <strong>must</strong> be:</p>
 <ul>
 <li>256x256 pixels</li>
@@ -840,7 +840,7 @@ On starting <strong>mwp</strong> you should see a new map option "Black Tiles".<
 <div class="highlight"><pre><span></span><code># put this in e.g. ~/.bashrc to make it permanent
 export MWP_BLACK_TILE=~/.config/mwp/mytile.png
 </code></pre></div>
-The environment variable may instead be added to <a href="../mwp-Configuration#cmdopts"><code>~/.config/mwp/cmdopts</code></a>.</p>
+The environment variable may instead be added to <a href="../mwp-Configuration/#cmdopts"><code>~/.config/mwp/cmdopts</code></a>.</p>
 <p>For example:</p>
 <p><img alt="Fly me to the Mars" src="../images/user-tile.png" /></p>
 

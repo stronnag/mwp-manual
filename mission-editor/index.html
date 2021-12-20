@@ -988,8 +988,8 @@
               
                 
 
-<h1 id="mission-editor">Mission Editor</h1>
-<h2 id="overview">Overview</h2>
+<h1 id="mission-editor">Mission Editor<a class="headerlink" href="#mission-editor" title="Permanent link">#</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
 <p>Another <a href="https://vimeo.com/268036585">slightly outdated video</a>, generic misson editing.</p>
 <iframe src="https://player.vimeo.com/video/268036585?h=e81256c10e" width="640" height="431" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
@@ -1003,10 +1003,10 @@
 </div>
 <p>Please also refer to the following articles that provide specific information for advanced <a href="https://github.com/iNavFlight/inav">inav</a> topics:</p>
 <ul>
-<li><a href="../inav-4.0-multi-missions">inav multi-missions</a></li>
-<li><a href="../Fly-By-Home-waypoints-(inav-4-new-feature)">inav fly-by-home</a></li>
+<li><a href="../inav-4.0-multi-missions/">inav multi-missions</a></li>
+<li><a href="../Fly-By-Home-waypoints-%28inav-4-new-feature%29/">inav fly-by-home</a></li>
 </ul>
-<h2 id="map-features">Map Features</h2>
+<h2 id="map-features">Map Features<a class="headerlink" href="#map-features" title="Permanent link">#</a></h2>
 <p>Missions are edited on the map by enabling mission edit mode:</p>
 <p><img alt="ui_edit" src="../images/wp-create-button.png" /></p>
 <p>This will:</p>
@@ -1018,7 +1018,7 @@
 <p>The context menu depends on the type of the current WP, for example:</p>
 <p><img alt="ui_edit" src="../images/mission-context.png" /></p>
 <p>The use of more advanced functions, for example setting parameter values, moving multiple WP, mission preview etc. requires the tabular mission editor</p>
-<h2 id="mission-editor_1">Mission Editor</h2>
+<h2 id="mission-editor_1">Mission Editor<a class="headerlink" href="#mission-editor_1" title="Permanent link">#</a></h2>
 <p>The mission editor may be invoked from the <a href="dock">dock</a> or from a WP context menu.</p>
 <p>It provides the following functions:</p>
 <ul>
@@ -1027,7 +1027,7 @@
 <li>Context sensitive column titles for parameter editing</li>
 <li>Bulk updates (altitudes, speeds, position offsets)</li>
 <li>Automatated path (polygon around a shape) generation.</li>
-<li><a href="../Mission-Elevation-Plot-and-Terrain-Analysis">Terrain Analysis</a>, automated altitude correction.</li>
+<li><a href="../Mission-Elevation-Plot-and-Terrain-Analysis/">Terrain Analysis</a>, automated altitude correction.</li>
 </ul>
 <p>There is a right mouse context menu, the availability of items depending on whether zero, one or multiple items are selected.</p>
 <figure>
@@ -1038,9 +1038,9 @@
 <p><img alt="mission_single" src="../images/mission_edit_m.png" /></p>
 <figcaption>Multiple selection context menu</figcaption>
 </figure>
-<h3 id="common-operations">Common Operations</h3>
+<h3 id="common-operations">Common Operations<a class="headerlink" href="#common-operations" title="Permanent link">#</a></h3>
 <p>Many of the operations described below are shown in the videos, which probably provide a clearer explanation that any textual description could.</p>
-<h4 id="editing">Editing</h4>
+<h4 id="editing">Editing<a class="headerlink" href="#editing" title="Permanent link">#</a></h4>
 <p>Way points can be edited Mission Editor. When a row is selected, the column headers will change to indicate the data fields appropriate to the point type (in particular the “parameters” P1,P2,P3 whose interpretation is dependent on the point type.</p>
 <ul>
 <li>Position. The position of a way point may be changed by dragging the way point icon on the map or editing in the list.</li>
@@ -1062,37 +1062,37 @@
 <li>Parameters P1, P2 and P3. The parameters P1,P2 and P3 are integer values that have a meaning specific to the way-point type or action. For example, for action type of JUMP, P1 is the point to which to jump, and P2 is the number of repeats. This usage is documented in the <a href="https://github.com/iNavFlight/inav/wiki/MSP-Navigation-Messages">inav wiki</a>.</li>
 <li>Delete. The delete action will delete the selected (highlighted) way point(s). If no way point is selected, this option has no affect.</li>
 </ul>
-<h4 id="add-shape">Add Shape</h4>
+<h4 id="add-shape">Add Shape<a class="headerlink" href="#add-shape" title="Permanent link">#</a></h4>
 <p>If a SET POI point is added to the mission, (there may also be other extant way-points), this option will display a dialogue to enter the number of points in a shape, the radial distance (from the SET POI to each point), an offset angle and the direction of rotation. i.e this defines a polygon around the POI.</p>
 <ul>
 <li>The offset is relative to North. If you wanted the lines to be horizontal / vertical, specify an offset of 45° for a square.</li>
 <li>Shape points are appended to any extant mission points, and the shape tool may be invoked multiple times, for example to create 'concentric' circles.</li>
 <li>The <code>SET_POI</code> point may be deleted, unless you really want <code>SET_POI</code> functionality.</li>
 </ul>
-<h4 id="location-updates">Location Updates</h4>
+<h4 id="location-updates">Location Updates<a class="headerlink" href="#location-updates" title="Permanent link">#</a></h4>
 <p>Bulk location updates may be applied to selected waypopints.</p>
 <p><img alt="mission_upd" src="../images/ui_mission_offset.png" /></p>
 <p>If an item if left black (or 0), then no adjustment is applied to that axis. Offsets are in metres, regardless of the user's preference distance unit.</p>
-<h4 id="speed-and-altitude-updates">Speed and Altitude updates</h4>
+<h4 id="speed-and-altitude-updates">Speed and Altitude updates<a class="headerlink" href="#speed-and-altitude-updates" title="Permanent link">#</a></h4>
 <p>Bulk speed and altitude updates may be applied to selected waypopints.</p>
-<h4 id="convert-altitudes">Convert Altitudes</h4>
-<p>From <a href="https://github.com/iNavFlight/inav">inav</a> 3.0, <a href="https://github.com/iNavFlight/inav">inav</a> supports both relative and AMSL altitudes. This, and the <a href="https://github.com/stronnag/mwptools">mwp</a> features for managing this, are described <a href="../Support-for-inav-3.0-WP-features">in a separate article</a></p>
-<h4 id="replicate-waypoints">Replicate Waypoints</h4>
+<h4 id="convert-altitudes">Convert Altitudes<a class="headerlink" href="#convert-altitudes" title="Permanent link">#</a></h4>
+<p>From <a href="https://github.com/iNavFlight/inav">inav</a> 3.0, <a href="https://github.com/iNavFlight/inav">inav</a> supports both relative and AMSL altitudes. This, and the <a href="https://github.com/stronnag/mwptools">mwp</a> features for managing this, are described <a href="../Support-for-inav-3.0-WP-features/">in a separate article</a></p>
+<h4 id="replicate-waypoints">Replicate Waypoints<a class="headerlink" href="#replicate-waypoints" title="Permanent link">#</a></h4>
 <p>This item facitates the cloning of waypoints. Since <a href="https://github.com/iNavFlight/inav">inav</a> now supports the JUMP waypoint type, this option is less useful.</p>
-<h4 id="preview-mission">Preview Mission</h4>
+<h4 id="preview-mission">Preview Mission<a class="headerlink" href="#preview-mission" title="Permanent link">#</a></h4>
 <p><a href="#mission-preview">"Flys"</a> an aircraft icon around the mission; this may be useful for predicting the behaviour of embedded JUMPs.</p>
-<h4 id="clear-mission">Clear Mission</h4>
+<h4 id="clear-mission">Clear Mission<a class="headerlink" href="#clear-mission" title="Permanent link">#</a></h4>
 <p>The Clear Mission option clears the mission. There is no confirmation, so be sure you really want to do this.</p>
-<h2 id="advanced-wp-types-video-tutorials">Advanced WP types / Video Tutorials</h2>
-<h3 id="jump-poshold-timed-land">JUMP, POSHOLD TIMED, LAND</h3>
+<h2 id="advanced-wp-types-video-tutorials">Advanced WP types / Video Tutorials<a class="headerlink" href="#advanced-wp-types-video-tutorials" title="Permanent link">#</a></h2>
+<h3 id="jump-poshold-timed-land">JUMP, POSHOLD TIMED, LAND<a class="headerlink" href="#jump-poshold-timed-land" title="Permanent link">#</a></h3>
 <p><a href="https://www.youtube.com/watch?v=w6M-v4qM5Yg">Video example</a> setting up JUMP, POSHOLD TIMED and LAND waypoints.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/w6M-v4qM5Yg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<h3 id="set_poi-set_head-as-mission-elements">SET_POI, SET_HEAD as mission elements</h3>
+<h3 id="set_poi-set_head-as-mission-elements">SET_POI, SET_HEAD as mission elements<a class="headerlink" href="#set_poi-set_head-as-mission-elements" title="Permanent link">#</a></h3>
 <p><a href="https://www.youtube.com/watch?v=RO5N9tbzNg8">Video example</a> SET_POI and SET_HEAD (real mission usage).</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RO5N9tbzNg8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<h3 id="mission-preview">Mission Preview</h3>
+<h3 id="mission-preview">Mission Preview<a class="headerlink" href="#mission-preview" title="Permanent link">#</a></h3>
 <p><a href="https://www.youtube.com/watch?v=MTA42WUOjUY">Video example</a> of preview for a complex (multiple jumps, timed POSHOLD) mission (preview from the first video).</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MTA42WUOjUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

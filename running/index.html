@@ -864,8 +864,8 @@
               
                 
 
-<h1 id="running-mwp">Running mwp</h1>
-<h2 id="video-tutorials">Video Tutorials</h2>
+<h1 id="running-mwp">Running mwp<a class="headerlink" href="#running-mwp" title="Permanent link">#</a></h1>
+<h2 id="video-tutorials">Video Tutorials<a class="headerlink" href="#video-tutorials" title="Permanent link">#</a></h2>
 <p>There is an <a href="https://vimeo.com/267437907">slighty outdated video</a>  that describes dock usage and some post-install actions:</p>
 <iframe src="https://player.vimeo.com/video/267437907?h=015ed1fdc6" width="640" height="431" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
@@ -880,15 +880,15 @@
 </ul>
 </div>
 <p>Apart from that, it's quite informative.</p>
-<h3 id="tutorial-playlist">Tutorial Playlist</h3>
+<h3 id="tutorial-playlist">Tutorial Playlist<a class="headerlink" href="#tutorial-playlist" title="Permanent link">#</a></h3>
 <p>All the developer's tutorial videos are in a <a href="https://www.youtube.com/playlist?list=PLE_mnLfCdjvAH4pLe9HCqaWm682_r8NT3">youtube playlist</a>.</p>
-<h2 id="graphical-user-interface">Graphical User Interface</h2>
+<h2 id="graphical-user-interface">Graphical User Interface<a class="headerlink" href="#graphical-user-interface" title="Permanent link">#</a></h2>
 <p>Once you've <a href="../Building-with-meson-and-ninja/">built and / or installed</a> <a href="https://github.com/stronnag/mwptools">mwp</a>.</p>
 <p>The install process installs an desktop icon and <code>mwp.desktop</code> application file <img alt="icon" src="../images/mwp_icon.svg" /></p>
 <p>The <code>desktop</code> file tells the window manager where to find <a href="https://github.com/stronnag/mwptools">mwp</a> and on modern desktop environments (e.g. Gnome Shell, xfce, kde), <a href="https://github.com/stronnag/mwptools">mwp</a> will be added to the system application menu and / or 'finder'.
 * It is also possible to run <a href="https://github.com/stronnag/mwptools">mwp</a> from a terminal, passing additional <a href="mwp-Configuration">options</a> if required.
 * Such <a href="mwp-Configuration">options can be added to a configuration file</a> for persistance or use from the graphical icon.</p>
-<h2 id="command-line-options">Command line options</h2>
+<h2 id="command-line-options">Command line options<a class="headerlink" href="#command-line-options" title="Permanent link">#</a></h2>
 <p><a href="https://github.com/stronnag/mwptools">mwp</a>'s command line options may be displayed with the <code>--help</code> option:</p>
 <div class="highlight"><pre><span></span><code>mwp --help
 Usage:
@@ -942,7 +942,7 @@ Application Options:
   --smartport                         Unsupported
   --display=DISPLAY                   X display to use
 </code></pre></div>
-<h3 id="bash-completion">Bash completion</h3>
+<h3 id="bash-completion">Bash completion<a class="headerlink" href="#bash-completion" title="Permanent link">#</a></h3>
 <p><a href="https://github.com/stronnag/mwptools">mwp</a> installation also installs a 'bash completion' script (and also a <code>blackbox_decode</code> completion script).
 Note this is only available after you log in, so on first install, it's only available after the <em>next</em> login.</p>
 <p>This facilitates automatic command completion, so you don't have to remember all the options or be always typing <code>mwp --help</code>.</p>
@@ -951,19 +951,19 @@ Note this is only available after you log in, so on first install, it's only ava
 --radar-device  --raw-log
 </code></pre></div>
 Further entry (e.g. <code>d</code>) would complete the command (<code>--radar-device</code>).</p>
-<h3 id="adding-options-to-a-running-mwp">Adding options to a running mwp</h3>
+<h3 id="adding-options-to-a-running-mwp">Adding options to a running mwp<a class="headerlink" href="#adding-options-to-a-running-mwp" title="Permanent link">#</a></h3>
 <p>Certain options, like <code>--replay-bbox</code>, <code>--mission</code> allow you to add a file to a running <a href="https://github.com/stronnag/mwptools">mwp</a>. So if <a href="https://github.com/stronnag/mwptools">mwp</a> was running, either from the command line or Desktop Environment icon, then (for example):</p>
 <p><div class="highlight"><pre><span></span><code>mwp --mission file-i-forgot.mission
 </code></pre></div>
 would load the mission <code>file-i-forgot.mission</code> into the running <a href="https://github.com/stronnag/mwptools">mwp</a> rather than starting a new instance.</p>
-<h3 id="drag-and-drop">Drag and Drop</h3>
+<h3 id="drag-and-drop">Drag and Drop<a class="headerlink" href="#drag-and-drop" title="Permanent link">#</a></h3>
 <p>You can <em>drag and drop</em> relevant files onto the <a href="https://github.com/stronnag/mwptools">mwp</a> map:</p>
 <ul>
 <li>Blackbox Logs</li>
 <li>Mission Files</li>
 <li>KML Overlays</li>
 </ul>
-<h3 id="clean-and-unclean-exits">Clean and unclean exits</h3>
+<h3 id="clean-and-unclean-exits">Clean and unclean exits<a class="headerlink" href="#clean-and-unclean-exits" title="Permanent link">#</a></h3>
 <p>If you exit <a href="https://github.com/stronnag/mwptools">mwp</a> from the <strong>Quit</strong> menu (or Control-Q key shortcut), then the current dock layout will be saved; if you close <a href="https://github.com/stronnag/mwptools">mwp</a> from the Window Manager <code>close</code> title bar button, or CLI <code>kill</code> command, the layout is not saved; this is a feature.</p>
 
               

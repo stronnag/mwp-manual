@@ -918,7 +918,7 @@
               
                 
 
-<h1 id="serial-device-support">"Serial" device support</h1>
+<h1 id="serial-device-support">"Serial" device support<a class="headerlink" href="#serial-device-support" title="Permanent link">#</a></h1>
 <p>mwp supports a number of different data transports for "serial" protocols:</p>
 <ul>
 <li>Wired serial devices (USB TTL (VCP) etc.)</li>
@@ -927,7 +927,7 @@
 <li>"Special" (e.g. BulletGCSS via the MQTT protocol).</li>
 </ul>
 <p>Each of these requires a specific device name and <em>may</em> require a protocol selection.</p>
-<h2 id="serial-devices">Serial devices</h2>
+<h2 id="serial-devices">Serial devices<a class="headerlink" href="#serial-devices" title="Permanent link">#</a></h2>
 <p>Serial devices are defined by the operating system device node name and optionally include an embedded baud rate, for example:</p>
 <p><div class="highlight"><pre><span></span><code># Linux, USB seral
 /dev/ttyACM0
@@ -939,7 +939,7 @@
 <div class="highlight"><pre><span></span><code># FreeBSD
 /dev/cuaU0
 </code></pre></div></p>
-<h2 id="bluetooth">Bluetooth</h2>
+<h2 id="bluetooth">Bluetooth<a class="headerlink" href="#bluetooth" title="Permanent link">#</a></h2>
 <p>Bluetooth may be specified by either an <code>rfcomm</code> device node (<code>/dev/rfcommX</code>) or by the device address (<code>BD_ADDR</code>, Linux only):</p>
 <div class="highlight"><pre><span></span><code># BT RFCOMM device node
 /dev/rfcomm1
@@ -947,7 +947,7 @@
 # BT device address (note here baud rate is immaterial)
 35:53:17:04:07:27
 </code></pre></div>
-<h2 id="ip-protocols-udp-and-tcp">IP protocols (UDP and TCP)</h2>
+<h2 id="ip-protocols-udp-and-tcp">IP protocols (UDP and TCP)<a class="headerlink" href="#ip-protocols-udp-and-tcp" title="Permanent link">#</a></h2>
 <p>mwp uses a pseudo-URL format for TCP and UDP connections <code>udp://host:‍port</code> and <code>tcp://host:‍port</code> (where <code>host</code> is either a hostname or an IP address as required).</p>
 <p>Typically on one side of the connection you'll provide a hostname /IP and on the other you won't (as it can get the peer address from the first data packet).</p>
 <p>Assuming the required UDP port is 43210</p>
@@ -959,21 +959,21 @@ i.e. the host part is empty.</p>
 <div class="highlight"><pre><span></span><code>udp://192.168.42.17:43210
 </code></pre></div></p>
 <p>Note that for TCP, mwp only supports the latter form (it expects to be the TCP client).</p>
-<h2 id="special-cases">Special Cases</h2>
-<h3 id="mqtt-bulletgcss">MQTT / BulletGCSS</h3>
+<h2 id="special-cases">Special Cases<a class="headerlink" href="#special-cases" title="Permanent link">#</a></h2>
+<h3 id="mqtt-bulletgcss">MQTT / BulletGCSS<a class="headerlink" href="#mqtt-bulletgcss" title="Permanent link">#</a></h3>
 <p>See the <a href="mqtt---bulletgcss-telemetry">mwp's MQTT support</a> article for a detalied desription of the URI format:
 <div class="highlight"><pre><span></span><code>mqtt://[user[:pass]@]broker[:port]/topic[?cafile=file]
 </code></pre></div></p>
-<h3 id="wsl-udp-bridge">WSL UDP bridge</h3>
+<h3 id="wsl-udp-bridge">WSL UDP bridge<a class="headerlink" href="#wsl-udp-bridge" title="Permanent link">#</a></h3>
 <p>As WSL does not suport serial connections, mwp provides a bespoke serial / UDP bridge using the pseudo-device name <code>udp://__MWP_SERIAL_HOST:17071</code>. See the <a href="mwp-in-Windows-11---WSL-G">WSL article</a> for more detail.</p>
-<h2 id="multi-protocol-selection">Multi Protocol selection</h2>
-<h3 id="overview">Overview</h3>
+<h2 id="multi-protocol-selection">Multi Protocol selection<a class="headerlink" href="#multi-protocol-selection" title="Permanent link">#</a></h2>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h3>
 <p>From 4.317.587 (2021-11-21), mwp does away with some of the weirdness around serial protocols (e.g. having to separately specify <code>--smartport</code> in order to use S-Port telemetry).</p>
 <p>Instead, there is now a protocol drop-down that allows the user to select the in-use serial protocol.
 <img alt="dropdown0" src="../images/proto_dropdown-1.png" /></p>
 <p>Offering:
 <img alt="dropdown1" src="../images/proto_dropdown-0.png" /></p>
-<h3 id="usage">Usage</h3>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -1004,13 +1004,13 @@ i.e. the host part is empty.</p>
 </tr>
 </tbody>
 </table>
-<h4 id="notes">Notes</h4>
+<h4 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h4>
 <ul>
 <li>For radar functions (inav-radar, ADSB), it is necessary to set the <code>--radar-device=</code>. Leave the protocol selector at 'Auto'.</li>
 <li>For telemetry forwarding, it is necessary to set the <code>--forward-to=</code>. Leave the protocol selector at 'Auto'.</li>
 <li>For FlySky MPM telemetry, the inav CLI setting <code>set ibus_telemetry_type = 0</code> is required; any other <code>ibus_telemetry_type</code> value will not work.</li>
 </ul>
-<h4 id="auto-detection">Auto-detection</h4>
+<h4 id="auto-detection">Auto-detection<a class="headerlink" href="#auto-detection" title="Permanent link">#</a></h4>
 <ul>
 <li>INAV (MSP, LTM, MAVLink) auto-detection should be reliable (legacy function).</li>
 <li>S-Port and CRSF may be less reliably detected.</li>

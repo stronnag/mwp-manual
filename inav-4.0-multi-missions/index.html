@@ -934,48 +934,48 @@
               
                 
 
-<h1 id="inav-40-multi-mission-support">INAV 4.0 Multi-Mission Support</h1>
-<h2 id="overview">Overview</h2>
+<h1 id="inav-40-multi-mission-support">INAV 4.0 Multi-Mission Support<a class="headerlink" href="#inav-40-multi-mission-support" title="Permanent link">#</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
 <p>In <a href="https://github.com/iNavFlight/inav">inav</a> 4.0, the FC supports "multi-missions", that is allowing the user to upload and store multiple missions.</p>
 <p>The mission to be executed may be set when the mission set is uploaded, or selected by OSD command (or stick command).</p>
-<h2 id="mwp-support">mwp support</h2>
+<h2 id="mwp-support">mwp support<a class="headerlink" href="#mwp-support" title="Permanent link">#</a></h2>
 <p>The means by which this function is provided by the FC is a little inconvenient (for the planner) but expedient; it's hard to see how else it could have been implemented.</p>
 <p>In general and in summary, the functionality allows multiple missions to exist in a single "mission file" and either one or all of those mission can be uploaded to the FC.</p>
 <p>When a "multi-mission" set is downloaded from the FC, <a href="https://github.com/stronnag/mwptools">mwp</a> will set the active mission to that set as active in the FC.</p>
 <p>When a "multi-mission" set is uploaded to the FC, mwp will set the active FC mission to its active mission.</p>
-<h2 id="mwp-changes">mwp changes</h2>
-<h3 id="top-bar">Top Bar</h3>
+<h2 id="mwp-changes">mwp changes<a class="headerlink" href="#mwp-changes" title="Permanent link">#</a></h2>
+<h3 id="top-bar">Top Bar<a class="headerlink" href="#top-bar" title="Permanent link">#</a></h3>
 <p>The top bar how includes an "Active Mission" item. This always has mission 1 (the legacy mission) and offers "New", allowing multiple missions to be maintained in one mwp session.</p>
 <p><img alt="top_bar" src="../images/mm_top_bar.png" /></p>
-<h3 id="open-mission-file">Open Mission file</h3>
+<h3 id="open-mission-file">Open Mission file<a class="headerlink" href="#open-mission-file" title="Permanent link">#</a></h3>
 <p>The file open dialog has a preview pane that displays the missions in a multi-mission file. The user can select the mission to be the active mission.</p>
 <p><img alt="open_file" src="../images/mm_open.png" /></p>
-<h3 id="apppend-mission-file">Apppend Mission File</h3>
+<h3 id="apppend-mission-file">Apppend Mission File<a class="headerlink" href="#apppend-mission-file" title="Permanent link">#</a></h3>
 <p>It is now possible to append an existing mission file (which may hold multiple missions) into a multi-mission set. This uses same dialog as <a href="#open-mission-file">Open Mission File</a>.</p>
 <p><img alt="append" src="../images/mm_append.png" /></p>
-<h3 id="save-as-mission-file">Save As Mission file</h3>
+<h3 id="save-as-mission-file">Save As Mission file<a class="headerlink" href="#save-as-mission-file" title="Permanent link">#</a></h3>
 <p>The file "Save as" dialog has an option to exclude specific segments from a multi-mission (via the <strong>Remove Segments from file</strong> button in the following image).
 Note that "Save" will always save all mission segments.</p>
 <p><img alt="open_file" src="../images/mm_saveas.png" /></p>
 <p>In this case, only segment 1 of the multi-mission would be saved.</p>
-<h2 id="upload-download-menu-options">Upload / Download Menu Options</h2>
+<h2 id="upload-download-menu-options">Upload / Download Menu Options<a class="headerlink" href="#upload-download-menu-options" title="Permanent link">#</a></h2>
 <p>The menu options reflect the new capability to upload all or the active mission. The "Save to EEPROM" option may also change to this pattern in future.</p>
 <p><img alt="load_menu" src="../images/mm_menus.png" /></p>
-<h3 id="multi-mission-manager">Multi-Mission Manager</h3>
+<h3 id="multi-mission-manager">Multi-Mission Manager<a class="headerlink" href="#multi-mission-manager" title="Permanent link">#</a></h3>
 <p>The <strong>Edit</strong> menu has a <strong>Multi Mission Manager</strong> option. This allows the user to delete one or more missions from a multi-mission scenario.</p>
 <p><img alt="open_file" src="../images/mm_manager.png" /></p>
-<h2 id="fc-limits">FC Limits</h2>
+<h2 id="fc-limits">FC Limits<a class="headerlink" href="#fc-limits" title="Permanent link">#</a></h2>
 <p>inav 4.0 limits the total number of waypoints to 120 and the number of mission segments within a multi-mission scenario to 9.</p>
 <p><strong>mwp</strong> will allow the user to exceed these limits while creating / editing multi-mission scenarios, but enforces the limits for upload. So it would be possible to open / append files containing a total of (for example) 11 mission segments and 150 WPs. It would be necesary to reduce the mission set to the FC limits before it could be uploaded.</p>
-<h2 id="legacy">Legacy</h2>
+<h2 id="legacy">Legacy<a class="headerlink" href="#legacy" title="Permanent link">#</a></h2>
 <p>mwp still supports prior FC firmware, including MW. It is a bug if this is not the case. However, the user needs to be aware of the capabilities of the FC firmware.</p>
-<h2 id="caveats">Caveats</h2>
+<h2 id="caveats">Caveats<a class="headerlink" href="#caveats" title="Permanent link">#</a></h2>
 <ul>
 <li>This is all quite novel and has required some significant changes in <a href="https://github.com/stronnag/mwptools">mwp</a>; however it appears quite stable.</li>
 <li>By default, <a href="https://github.com/stronnag/mwptools">mwp</a> writes mission files in "reset / per segment metadata" style.</li>
 <li>Multi-mission files may be written in the (IMO) ugly / confusing "sequential" style required by the configurator if the environment variable CFG_UGLY_XML is set (to any value). See the <a href="https://github.com/iNavFlight/inav/tree/master/docs/development/wp_mission_schema">schema definition</a> for details. mwp can read either style.</li>
 </ul>
-<h2 id="example-xml-multi-mission-file">Example XML multi-mission file</h2>
+<h2 id="example-xml-multi-mission-file">Example XML multi-mission file<a class="headerlink" href="#example-xml-multi-mission-file" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;mission&gt;
   &lt;!--mw planner 0.01--&gt;
